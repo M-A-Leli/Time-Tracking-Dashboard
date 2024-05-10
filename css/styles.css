@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 300;
+    color: white;
+}
+
+section {
+    width: 100vw;
+    height: 100vh;
+    background-color:hsl(226, 43%, 10%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 80%;
+    height: 80%;
+    padding: 10px;
+    /* border: 1px solid white; */
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: 'rf w p st' 'rf e so sc';
+    text-transform: capitalize;
+}
+
+.report-for, .work, .play, .study, .exercise, .social, .self-care {
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+}
+
+.report-for {
+    background-color: hsl(235, 46%, 20%);
+    grid-area: rf;
+}
+
+.work {
+    background-color: hsl(15, 100%, 70%);
+    grid-area: w;
+}
+
+.play {
+    background-color: hsl(195, 74%, 62%);
+    grid-area: p;
+}
+
+.study {
+    background-color: hsl(348, 100%, 68%);
+    grid-area: st;
+}
+
+.exercise {
+    background-color: hsl(145, 58%, 55%);
+    grid-area: e;
+}
+
+.social {
+    background-color: hsl(264, 64%, 52%);
+    grid-area: so;
+}
+
+.self-care {
+    background-color: hsl(43, 84%, 65%);
+    grid-area: sc;
+}
+
+.upper {
+    padding: 10px;
+    border-radius: 15px;
+    flex: 1;
+    max-height: 20%;
+    display: flex;
+    flex-direction: row-reverse;
+    /*  */
+}
+
+.upper img {
+    /*  */
+}
+
+.report-for .upper {
+    padding: 10px 20px;
+    min-height: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: hsl(246, 80%, 60%);
+    border-radius: 15px 15px 15px 15px;
+}
+
+.report-for .upper img {
+    width: 100px;
+    height: 100px;
+    margin: 20px 0;
+    border-radius: 50%;
+    border: 1px solid white;
+}
+
+.report-for .upper p {
+    margin-bottom: 10px;
+}
+
+.report-for .upper h1 {
+    font-size: 36px;
+}
+
+.lower {
+    padding: 10px 20px;
+    width: 100%;
+    flex: 3;
+    background-color: hsl(235, 46%, 20%);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.report-for .lower {
+    padding: 10px 20px;
+}
+
+.report-for .lower p {
+    color: lightgray;
+}
+
+.report-for .lower p:nth-child(2) {
+    color: white;
+    font: bold;
+    font-weight: 500;
+}
+
+.action {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.current-hrs p {
+    font-size: 36px;
+    font-weight: 100;
+}
+
+.previous-hrs {
+    color: lightgrey;
+}
+
+/* Styles for tablets (768px to 1023px width) */
+@media screen and (max-width: 1023px) {
+
+}
+
+/* Styles for mobile devices (up to 767px width) */
+@media screen and (max-width: 479px) {
+    section {
+        width: 100vw;
+        height: auto;
+    }
+
+    .container {
+        margin: 30px 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .report-for, .work, .play, .study, .exercise, .social, .self-care {
+        height: 30vh;
+    }
+
+    .report-for .upper {
+        display: grid;
+        grid-template-columns: repeat(2, 2fr);
+        grid-template-rows: repeat(2, 2fr);
+        grid-template-areas: 'img pr' 'img h1';
+        align-items: center;
+    }
+
+    .report-for .upper img {
+        margin: 0;
+        grid-area: img;
+    }
+
+    .report-for .upper p {
+        grid-area: pr;
+        margin: 0;
+    }
+
+    .report-for .upper h1 {
+        grid-area: h1;
+        font-size: 24px;
+    }
+
+
+    .report-for .upper img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .lower {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas: 'a a' 'c p';
+        align-items: center;
+    }
+
+    .report-for .lower {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .action {
+        grid-area: a;
+    }
+    
+    .current-hrs p {
+        grid-area: c;
+    }
+    
+    .previous-hrs {
+        grid-area: p;
+    }
+}
